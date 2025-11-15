@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { 
+            url = uri("https://api.xposed.info/")
+            name = "Xposed"
+            content {
+                includeGroup("de.robv.android.xposed")
+            }
+        }
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+rootProject.name = "Global Positioning System"
+include(":app")
